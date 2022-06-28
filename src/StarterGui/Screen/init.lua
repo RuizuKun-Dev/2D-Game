@@ -7,6 +7,35 @@ local score_txt = guiUtil.createUI("TextLabel", {
 	TextScaled = true,
 	BorderSizePixel = 0,
 }, canvas)
+guiUtil.createUI("TextLabel", {
+	Name = "How to left",
+	Text = "A < Left",
+	AnchorPoint = Vector2.new(0.5, 0),
+	Position = UDim2.fromScale(0.3, 0.1),
+	Size = UDim2.fromScale(0.2, 0.05),
+	TextScaled = true,
+	BorderSizePixel = 0,
+}, canvas)
+
+guiUtil.createUI("TextLabel", {
+	Name = "How to right",
+	Text = "D > Right",
+	AnchorPoint = Vector2.new(0.5, 0),
+	Position = UDim2.fromScale(0.7, 0.1),
+	Size = UDim2.fromScale(0.2, 0.05),
+	TextScaled = true,
+	BorderSizePixel = 0,
+}, canvas)
+
+guiUtil.createUI("TextLabel", {
+	Name = "How to score",
+	Text = "Collect fruits for points",
+	AnchorPoint = Vector2.new(0.5, 0),
+	Position = UDim2.fromScale(0.5, 0.3),
+	Size = UDim2.fromScale(0.2, 0.1),
+	TextScaled = true,
+	BorderSizePixel = 0,
+}, canvas)
 local Apple = engine:Create("RigidBody", {
 	Object = require(script.Apple),
 	Collidable = true,
