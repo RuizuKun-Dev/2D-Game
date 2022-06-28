@@ -21,3 +21,11 @@ local Orange = engine:Create("RigidBody", {
 })
 Orange:SetState("Fruit", true)
 Orange:SetState("Points", 3)
+
+local Mango = engine:Create("RigidBody", {
+	Object = require(script.Mango),
+	Collidable = true,
+	Anchored = false,
+})
+Mango:SetState("Fruit", true)
+Mango:SetState("Points", 4)
