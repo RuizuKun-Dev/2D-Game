@@ -30,9 +30,23 @@ local Mango = engine:Create("RigidBody", {
 Mango:SetState("Fruit", true)
 Mango:SetState("Points", 4)
 
+local platform = engine:Create("RigidBody", {
+	Object = Platform,
+	Collidable = true,
+	Anchored = true,
+})
+
 local function isAFruit(fruit): boolean
 	return fruit:GetState("Fruit")
 end
+
+platform.Touched:Connect(function(id: string)
+	local fruit = engine:GetBodyById(id)
+
+	if isAFruit(fruit) then
+		fruit:Destroy()
+	end
+end)
 local player = engine:Create("RigidBody", {
 	Object = Character,
 	Collidable = true,
