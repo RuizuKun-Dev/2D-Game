@@ -1,3 +1,12 @@
+local score_txt = guiUtil.createUI("TextLabel", {
+	Name = "Score",
+	Text = 0,
+	AnchorPoint = Vector2.new(1, 0),
+	Position = UDim2.fromScale(1, 0.05),
+	Size = UDim2.fromScale(0.1, 0.05),
+	TextScaled = true,
+	BorderSizePixel = 0,
+}, canvas)
 local Apple = engine:Create("RigidBody", {
 	Object = require(script.Apple),
 	Collidable = true,
