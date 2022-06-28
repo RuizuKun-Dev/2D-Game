@@ -29,3 +29,34 @@ local Mango = engine:Create("RigidBody", {
 })
 Mango:SetState("Fruit", true)
 Mango:SetState("Points", 4)
+
+local function isAFruit(fruit): boolean
+	return fruit:GetState("Fruit")
+end
+task.spawn(function()
+	local rng = Random.new()
+
+	local function spawnFruit(selectedFruit)
+		local fruit = selectedFruit:Clone(true)
+		local frame = fruit:GetFrame()
+		frame.Parent = canvas
+		fruit:SetPosition(rng:NextInteger(10, canvas.AbsoluteSize.X - frame.AbsoluteSize.X * 1.5, 0), 10)
+	end
+
+	local Fruits = {
+		Apple,
+		Pear,
+		Orange,
+		Mango,
+	}
+
+	local function spawnRandomFruit()
+		local fruit = Fruits[rng:NextInteger(1, #Fruits)]
+		spawnFruit(fruit)
+	end
+
+	while true do
+		spawnRandomFruit()
+		task.wait(rng:NextNumber(1, 2))
+	end
+end)
