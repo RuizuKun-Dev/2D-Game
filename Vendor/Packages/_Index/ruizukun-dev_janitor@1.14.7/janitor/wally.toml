@@ -1,0 +1,16 @@
+[package]
+name = "ruizukun-dev/janitor"
+description = "A garbage collector object implementation for Roblox, featuring support for custom cleanup methods, Promises, and instance linking."
+version = "1.14.7"
+license = "MIT"
+authors = ["howmanysmall"]
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+exclude = ["*"]
+include = ["src", "src/init.lua", "src/init.meta.json",
+"src/GetPromiseLibrary.lua","src/RbxScriptConnection.lua", "src/Symbol.lua",
+"default.project.json", "wally.toml"]
+
+
+[dependencies]
