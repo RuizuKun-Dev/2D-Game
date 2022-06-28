@@ -1,0 +1,14 @@
+[package]
+name = "ruizukun-dev/t"
+description = "A Runtime Typechecker for Roblox"
+version = "3.0.6"
+license = "MIT"
+authors = ["Osyris"]
+realm = "shared"
+registry = "https://github.com/upliftgames/wally-index"
+
+exclude = ["*"]
+include = ["lib", "lib/init.lua", "lib/init.meta.json", 
+"default.project.json", "wally.toml"]
+
+[dependencies]
