@@ -1,0 +1,18 @@
+name = "Images"
+upload-to-group-id = 3132914
+
+[[inputs]]
+glob = "Images/**/*.png"
+
+codegen = true
+codegen-path = "src/ReplicatedStorage/Images/ImageRegistry.lua"
+codegen-base-path = "Images"
+
+[[inputs]]
+glob = "Sprites**/*.png"
+
+
+packable = true
+codegen = true
+codegen-path = "src/ReplicatedStorage/Images/SpriteRegistry.lua"
+codegen-base-path = "Sprites"

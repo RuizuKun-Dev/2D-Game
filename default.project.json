@@ -1,0 +1,89 @@
+{
+	"name": "2D Game",
+	"servePlaceIds": [0],
+	"tree": {
+		"$className": "DataModel",
+
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"$path": "src/ReplicatedStorage",
+			"Packages": {
+				"$path": "Vendor/Packages"
+			},
+			"Utilities": {
+				"$path": "Vendor/Utilities"
+			},
+
+			"$ignoreUnknownInstances": true
+		},
+
+		"ServerScriptService": {
+			"$className": "ServerScriptService",
+			"$path": "src/ServerScriptService",
+
+			"ServerCore": {
+				"$path": "Core/Server"
+			},
+
+			"$ignoreUnknownInstances": true
+		},
+
+		"ServerStorage": {
+			"$className": "ServerStorage",
+			"$path": "src/ServerStorage",
+			"ServerPackages": {
+				"$path": "Vendor/ServerPackages"
+			},
+
+			"$ignoreUnknownInstances": true
+		},
+
+		"StarterPlayer": {
+			"$className": "StarterPlayer",
+			"StarterPlayerScripts": {
+				"$className": "StarterPlayerScripts",
+				"$path": "src/StarterPlayerScripts",
+
+				"ClientCore": {
+					"$path": "Core/Client"
+				},
+
+				"UI": {
+					"$path": "src/StarterGui"
+				}
+			},
+
+			"$ignoreUnknownInstances": true
+		},
+
+		"SoundService": {
+			"$className": "SoundService",
+			"$path": "src/SoundService",
+
+			"$ignoreUnknownInstances": true
+		},
+
+		"TestService": {
+			"$className": "TestService",
+			"$path": "Tests",
+
+			"DevPackages": {
+				"$path": "Vendor/DevPackages"
+			},
+
+			"ENABLE_BENCHMARKER": {
+				"$className": "BoolValue"
+			},
+			"ENABLE_DEBUG": {
+				"$className": "BoolValue"
+			},
+			"ENABLE_TESTS": {
+				"$className": "BoolValue"
+			},
+
+			"$ignoreUnknownInstances": true
+		},
+
+		"$ignoreUnknownInstances": true
+	}
+}

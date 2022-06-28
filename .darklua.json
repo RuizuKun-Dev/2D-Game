@@ -1,0 +1,11 @@
+{
+	"process": [
+		"remove_comments",
+		"compute_expression",
+		"convert_index_to_field",
+		"remove_empty_do",
+
+		"remove_unused_if_branch",
+		"remove_unused_while"
+	]
+}

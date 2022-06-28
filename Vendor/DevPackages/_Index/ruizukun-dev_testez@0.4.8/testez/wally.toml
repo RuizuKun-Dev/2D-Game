@@ -1,0 +1,18 @@
+[package]
+name = "ruizukun-dev/testez"
+version = "0.4.8"
+license = "Apache2"
+authors = ["Roblox"]
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+exclude = ["*"]
+include = ["src", "src/init.lua", "src/init.meta.json",
+"src/Reporters", "src/Reporters/TeamCityReporter.lua", "src/Reporters/TextReporter.lua", "src/Reporters/TextReporterQuiet.lua",
+"src/Context.lua", "src/Expectation.lua", "src/ExpectationContext.lua",
+"src/LifecycleHooks.lua", "src/TestBootstrap.lua", "src/TestEnum.lua",
+"src/TestPlan.lua", "src/TestPlanner.lua", "src/TestResults.lua",
+"src/TestResults.lua", "src/TestRunner.lua", "src/TestSession.lua",
+"default.project.json", "wally.toml"]
+
+[dependencies]

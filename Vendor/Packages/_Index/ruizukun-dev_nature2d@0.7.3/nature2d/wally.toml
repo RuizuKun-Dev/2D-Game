@@ -1,0 +1,11 @@
+[package]
+name = "ruizukun-dev/nature2d"
+description = "Create versatile physics simulations and mechanics with Guis on Roblox!"
+version = "0.7.3"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+exclude = ["*"]
+include = ["src", "src/*", "default.project.json", "wally.toml"]
+
+[dependencies]

@@ -1,0 +1,21 @@
+[package]
+name = "kitsune/time-attack"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+
+Nature2D = "ruizukun-dev/nature2d@^0.7.2"
+
+Utilities = "ruizukun-dev/utilities@^1.0.5"
+
+[server-dependencies]
+
+Core = "ruizukun-dev/core@^1.0.1"
+
+[dev-dependencies]
+
+testez = "ruizukun-dev/testez@^0.4.8"
+
+Tests = "ruizukun-dev/tests@^1.0.1"
