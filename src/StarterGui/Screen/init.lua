@@ -13,3 +13,11 @@ local Pear = engine:Create("RigidBody", {
 })
 Pear:SetState("Fruit", true)
 Pear:SetState("Points", 2)
+
+local Orange = engine:Create("RigidBody", {
+	Object = require(script.Orange),
+	Collidable = true,
+	Anchored = false,
+})
+Orange:SetState("Fruit", true)
+Orange:SetState("Points", 3)
