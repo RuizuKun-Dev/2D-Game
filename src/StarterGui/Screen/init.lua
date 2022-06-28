@@ -33,6 +33,64 @@ Mango:SetState("Points", 4)
 local function isAFruit(fruit): boolean
 	return fruit:GetState("Fruit")
 end
+local player = engine:Create("RigidBody", {
+	Object = Character,
+	Collidable = true,
+	Anchored = false,
+})
+
+player:CanRotate(false)
+player:SetMaxForce(20)
+
+player:SetState("Points", 0)
+
+local Points = 0
+
+player.Touched:Connect(function(id: string)
+	local fruit = engine:GetBodyById(id)
+
+	if isAFruit(fruit) then
+		Points += fruit:GetState("Points")
+		fruit:Destroy()
+	end
+
+	score_txt.Text = Points
+end)
+
+local isMoving = { Left = false, Jump = false, Right = false }
+
+UserInputService.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.A then
+		isMoving.Left = true
+	elseif input.KeyCode == Enum.KeyCode.D then
+		isMoving.Right = true
+	end
+end)
+
+UserInputService.InputEnded:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.A then
+		isMoving.Left = false
+	elseif input.KeyCode == Enum.KeyCode.D then
+		isMoving.Right = false
+	end
+end)
+
+local MOVEMENT = {
+	MOVEFORCE = 5,
+}
+
+MOVEMENT.LEFT = Vector2.new(-MOVEMENT.MOVEFORCE, 0)
+MOVEMENT.RIGHT = Vector2.new(MOVEMENT.MOVEFORCE, 0)
+
+engine.Updated:Connect(function()
+	if isMoving.Left then
+		player:ApplyForce(MOVEMENT.LEFT)
+	elseif isMoving.Right then
+		player:ApplyForce(MOVEMENT.RIGHT)
+	end
+end)
+
+engine:Start()
 task.spawn(function()
 	local rng = Random.new()
 
