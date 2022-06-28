@@ -1,3 +1,17 @@
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Utilities = ReplicatedStorage.Utilities
+local guiUtil = require(Utilities.guiUtil)
+local Nature2D = require(Utilities.Nature2D)
+
+local UserInputService = game:GetService("UserInputService")
+
+local screen: ScreenGui = guiUtil.createUI(
+	"ScreenGui",
+	{ Name = "Screen", IgnoreGuiInset = true, ResetOnSpawn = false }
+)
+
+local canvas: Frame = guiUtil.createUI("Frame", { Name = "Canvas", Size = UDim2.fromScale(1, 1) }, screen)
+
 local score_txt = guiUtil.createUI("TextLabel", {
 	Name = "Score",
 	Text = 0,
@@ -7,6 +21,7 @@ local score_txt = guiUtil.createUI("TextLabel", {
 	TextScaled = true,
 	BorderSizePixel = 0,
 }, canvas)
+
 guiUtil.createUI("TextLabel", {
 	Name = "How to left",
 	Text = "A < Left",
@@ -36,6 +51,16 @@ guiUtil.createUI("TextLabel", {
 	TextScaled = true,
 	BorderSizePixel = 0,
 }, canvas)
+
+local Character = require(script.Character)
+Character.Parent = canvas
+
+local Platform = require(script.Platform)
+Platform.Parent = canvas
+
+local engine = Nature2D.init(screen)
+engine.canvas.frame = canvas
+
 local Apple = engine:Create("RigidBody", {
 	Object = require(script.Apple),
 	Collidable = true,
@@ -85,6 +110,7 @@ platform.Touched:Connect(function(id: string)
 		fruit:Destroy()
 	end
 end)
+
 local player = engine:Create("RigidBody", {
 	Object = Character,
 	Collidable = true,
@@ -143,6 +169,7 @@ engine.Updated:Connect(function()
 end)
 
 engine:Start()
+
 task.spawn(function()
 	local rng = Random.new()
 
@@ -170,3 +197,5 @@ task.spawn(function()
 		task.wait(rng:NextNumber(1, 2))
 	end
 end)
+
+return screen
