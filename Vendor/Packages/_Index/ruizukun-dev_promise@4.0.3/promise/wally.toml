@@ -1,0 +1,14 @@
+[package]
+name = "ruizukun-dev/promise"
+description = "Promise implementation for Roblox"
+version = "4.0.3"
+license = "MIT"
+authors = ["Evaera"]
+realm = "shared"
+registry = "https://github.com/UpliftGames/wally-index"
+
+exclude = ["*"]
+include = ["lib", "lib/init.lua", "lib/init.meta.json", 
+"default.project.json", "wally.toml"]
+
+[dependencies]

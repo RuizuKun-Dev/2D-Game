@@ -8,6 +8,8 @@ realm = "shared"
 
 Janitor = "ruizukun-dev/janitor@^1.14.7"
 t = "ruizukun-dev/t@^3.0.6"
+Promise = "ruizukun-dev/promise@^4.0.3"
+
 Nature2D = "ruizukun-dev/nature2d@^0.7.2"
 
 Utilities = "ruizukun-dev/utilities@^1.0.5"
