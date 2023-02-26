@@ -47,7 +47,7 @@ return {
 			Name = "Pop",
 			Splices = {
 				{ Start = 5.904495, End = 5.993637 },
-				{ Start = 6.247148, End = 6.283459 },
+				-- { Start = 6.247148, End = 6.283459 },
 			},
 		},
 		{

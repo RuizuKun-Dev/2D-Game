@@ -32,6 +32,10 @@ function Runner.CollisionResponse(body, other, isColliding, Collision, dt, oldCo
 	local p2 = Collision.edge.point2
 	local t
 
+	if not p1 or not p2 then
+		return
+	end
+
 	if math.abs(p1.pos.X - p2.pos.X) > math.abs(p1.pos.Y - p2.pos.Y) then
 		t = (Collision.vertex.pos.X - penetration.X - p1.pos.X) / (p2.pos.X - p1.pos.X)
 	else
